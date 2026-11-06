@@ -1,0 +1,35 @@
+<div class="ln-section">
+    <h2 class="ln-section-title">Yechib olish summasi</h2>
+    <div class="ln-amount-line">{$current.amount_text|htmlentities}</div>
+    <div class="ln-hint">Faqat to'liq yechib olish mumkin (summani o'zgartirib bo'lmaydi)</div>
+
+    <form id="withdraw-form" method="post" action="{:url('loan/withdraw')}">
+        {:token()}
+        <div class="ln-field">
+            <div class="ln-field-head">
+                <label for="c-term">To'lov muddati</label>
+                <span class="ln-note-inline">Yillik foiz stavkasi {$interestRate}%</span>
+            </div>
+            <select id="c-term" name="term" class="ln-select" data-url="{:url('loan/plan')}" {if $current.status == '3'}disabled{/if}>
+                {foreach name="terms" item="term"}
+                <option value="{$term}" {if $term == $selectedTerm}selected{/if}>{$term} marta</option>
+                {/foreach}
+            </select>
+        </div>
+
+        <div class="ln-plan" id="plan-box">
+            <div class="ln-plan-row"><span>Har bir to'lov</span><b data-plan="payment">{if $current.payment_text}{$current.payment_text}{else /}--{/if}</b></div>
+            <div class="ln-plan-row"><span>Foiz</span><b data-plan="interest">{if $current.interest_text}{$current.interest_text}{else /}--{/if}</b></div>
+            <div class="ln-plan-row"><span>Jami</span><b data-plan="total">{if $current.total_text}{$current.total_text}{else /}--{/if}</b></div>
+        </div>
+
+        {if $current.status == '3'}
+        <button type="button" class="ln-btn ln-btn-disabled" disabled>Yechib olish jarayonida</button>
+        {else /}
+        <button type="submit" class="ln-btn" id="withdraw-submit" {if !$bank}disabled{/if}>Yechib olish uchun ariza</button>
+        {if !$bank}
+        <div class="ln-hint" style="margin:8px 0 0">Avval quyida bank kartasini qo'shing, so'ng yechib olish mumkin</div>
+        {/if}
+        {/if}
+    </form>
+</div>

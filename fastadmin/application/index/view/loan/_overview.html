@@ -1,0 +1,17 @@
+<div class="ln-section ln-overview">
+    <div class="ln-ov-label">So'ralgan summa</div>
+    <div class="ln-ov-amount">{$current.amount_text|htmlentities}</div>
+    <div class="ln-badge ln-badge-{$current.status_class|htmlentities}">{$current.status_text|htmlentities}</div>
+    <div class="ln-ring ln-ring-{$current.status_class|htmlentities}">
+        <div class="ln-ring-inner">
+            <div class="ln-ring-item ln-ring-blue">
+                <span>Yechib olinadigan summa</span>
+                <b>{$current.withdrawable_amount_text|htmlentities}</b>
+            </div>
+            <div class="ln-ring-item ln-ring-red">
+                <span>Yechib olingan summa</span>
+                <b>{$current.withdraw_amount_text|htmlentities}</b>
+            </div>
+        </div>
+    </div>
+</div>

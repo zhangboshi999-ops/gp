@@ -1,0 +1,31 @@
+<div class="ln-topbar">
+    <span class="ln-userchip">{$user.nickname|htmlentities}</span>
+</div>
+<div class="ln-crumb"><a href="{:url('/')}">Orqaga</a>/ {$title|htmlentities}</div>
+<div class="ln-loginbar">
+    Tizimga kirgan（{$user.nickname|htmlentities}）· <a href="{:url('user/logout')}">Chiqish</a>
+</div>
+
+{if $current}
+{include file="loan/_overview" /}
+{/if}
+
+{if $showWithdraw}
+{include file="loan/_withdraw" /}
+{/if}
+
+{if $showBank}
+{include file="loan/_bank" /}
+{/if}
+
+{if $canApply}
+{include file="loan/_applyform" /}
+{/if}
+
+{include file="loan/_repayment" /}
+
+{if $current}
+{include file="loan/_detail" /}
+{/if}
+
+{include file="loan/_history" /}

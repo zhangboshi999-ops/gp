@@ -1,0 +1,21 @@
+<div class="ln-section">
+    <h2 class="ln-section-title">To'lov hisob-kitoblari</h2>
+    {if $repayments}
+    {foreach name="repayments" item="item"}
+    <div class="ln-history-item">
+        <div class="ln-badge ln-badge-{$item.status_class|htmlentities}">{$item.status_text|htmlentities}</div>
+        <div class="ln-info-row"><span class="ln-info-label">Davr</span><span class="ln-info-value">{$item.period_no}</span></div>
+        <div class="ln-info-row"><span class="ln-info-label">To'lov summasi</span><span class="ln-info-value">{$item.amount_text|htmlentities}</span></div>
+        <div class="ln-info-row"><span class="ln-info-label">To'lov sanasi</span><span class="ln-info-value">{$item.due_time_text|htmlentities}</span></div>
+        {if $item.status == '3' && $item.checkremark}
+        <div class="ln-info-row"><span class="ln-info-label">Rad etish sababi</span><span class="ln-info-value">{$item.checkremark|htmlentities}</span></div>
+        {/if}
+        <a class="ln-btn ln-btn-outline ln-btn-link" href="{:url('loan/repayment', ['ids'=>$item.id])}">
+            {if $item.status == '2'}Batafsil{else /}To'lash{/if}
+        </a>
+    </div>
+    {/foreach}
+    {else /}
+    <div class="ln-hint">To'lov hisob-kitoblari yo'q</div>
+    {/if}
+</div>

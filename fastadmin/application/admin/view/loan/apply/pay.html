@@ -1,0 +1,46 @@
+<form id="pay-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-3">{:__('Member')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <p class="form-control-static">{$row.user.nickname|htmlentities} (ID: {$row.user_id})</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-3">{:__('Withdraw_amount')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <p class="form-control-static text-danger"><strong>{$row.amount|htmlentities}</strong></p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-3">{:__('Bank')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <p class="form-control-static">
+                {if $row.bank}
+                {$row.bank.bank_name|htmlentities}<br>
+                {$row.bank.account_type|htmlentities} / {$row.bank.account_no|htmlentities} / {$row.bank.account_name|htmlentities}
+                {else /}
+                <span class="text-danger">{:__('No bank card bound')}</span>
+                {/if}
+            </p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-3">{:__('Term')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <p class="form-control-static">{$row.term|htmlentities} / {$row.payment|htmlentities} x {$row.term|htmlentities} = {$row.total|htmlentities}</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-3">{:__('Checkremark')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-checkremark" class="form-control" name="row[checkremark]" rows="3" placeholder="{:__('Optional')}"></textarea>
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-3"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-primary btn-embossed disabled">{:__('Pay')}</button>
+        </div>
+    </div>
+</form>

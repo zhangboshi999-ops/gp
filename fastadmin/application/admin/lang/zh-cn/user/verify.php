@@ -1,0 +1,28 @@
+<?php
+
+return [
+    'Id'             => 'ID',
+    'User_id'        => '会员ID',
+    'Real_name'      => '真实姓名',
+    'Id_type'        => '证件类型',
+    'Id_number'      => '证件号码',
+    'Country'        => '国家/地区',
+    'Front_image'    => '证件正面',
+    'Back_image'     => '证件反面',
+    'Hand_image'     => '手持照',
+    'Status'         => '审核状态',
+    'Status pending' => '待审核',
+    'Status pass'    => '已通过',
+    'Status reject'  => '已驳回',
+    'Remark'         => '驳回原因',
+    'Createtime'     => '提交时间',
+    'Updatetime'     => '更新时间',
+    'Checktime'      => '审核时间',
+    'Operate'        => '操作',
+    'Set status to pending' => '设为待审核',
+    'Set status to pass' => '设为已通过',
+    'Set status to reject' => '设为已驳回',
+    'Set status to pending' => '设为待审核',
+    'Set status to pass' => '设为已通过',
+    'Set status to reject' => '设为已驳回',
+];

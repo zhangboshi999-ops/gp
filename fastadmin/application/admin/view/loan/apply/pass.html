@@ -1,0 +1,40 @@
+<form id="pass-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-3">{:__('Member')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <p class="form-control-static">{$row.user.nickname|htmlentities} (ID: {$row.user_id})</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-3">{:__('Name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <p class="form-control-static">{$row.name|htmlentities} / {$row.mobile|htmlentities} / {$row.email|htmlentities}</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-3">{:__('Purpose')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <p class="form-control-static">{$row.purpose|htmlentities}</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-3">{:__('Amount')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-amount" data-rule="required" class="form-control" step="0.01" name="row[amount]" type="number" value="{$row.amount|htmlentities}">
+            <span class="help-block">{:__('The approved amount can be adjusted')}</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-3">{:__('Checkremark')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-checkremark" class="form-control" name="row[checkremark]" rows="3" placeholder="{:__('Optional')}"></textarea>
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-3"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('Pass')}</button>
+        </div>
+    </div>
+</form>

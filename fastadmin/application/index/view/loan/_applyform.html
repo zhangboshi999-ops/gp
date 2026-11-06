@@ -1,0 +1,42 @@
+<div class="ln-section">
+    <div class="ln-agreement">
+        <div class="ln-agreement-head">Shartnoma</div>
+        <div class="ln-agreement-body" id="agreement-body">
+            <p class="ln-sub-title">{$agreementTitle|htmlentities}</p>
+            {$agreementHtml}
+        </div>
+        <button type="button" class="ln-agreement-toggle" id="agreement-toggle">▲ Yopish</button>
+    </div>
+
+    <div class="ln-agree-check">
+        <input type="checkbox" id="agree-check" />
+        <label for="agree-check">Yuqoridagilarni ko'rib chiqdim va roziman.</label>
+        <a href="javascript:;" id="agreement-open">Kerakli</a>
+    </div>
+
+    <h2 class="ln-section-title">Asosiy ma'lumotlar</h2>
+    <form id="apply-form" method="post" action="{:url('loan/apply')}">
+        {:token()}
+        <div class="ln-field">
+            <div class="ln-field-head"><label for="c-amount">So'ralgan summa</label><span class="ln-req">Majburiy</span></div>
+            <input id="c-amount" name="amount" class="ln-input" type="number" min="1" step="1" placeholder="（Misol）100000" data-rule="required" />
+        </div>
+        <div class="ln-field">
+            <div class="ln-field-head"><label for="c-purpose">Maqsad</label><span class="ln-req">Majburiy</span></div>
+            <textarea id="c-purpose" name="purpose" class="ln-textarea" placeholder="*400" data-rule="required"></textarea>
+        </div>
+        <div class="ln-field">
+            <div class="ln-field-head"><label for="c-email">Elektron pochta</label><span class="ln-req">Majburiy</span></div>
+            <input id="c-email" name="email" class="ln-input" type="email" placeholder="（Misol）mail@example.com" data-rule="required;email" />
+        </div>
+        <div class="ln-field">
+            <div class="ln-field-head"><label for="c-name">Ismingiz</label><span class="ln-req">Majburiy</span></div>
+            <input id="c-name" name="name" class="ln-input" type="text" placeholder="Ismingizni kiriting" data-rule="required" />
+        </div>
+        <div class="ln-field">
+            <div class="ln-field-head"><label for="c-mobile">Telefon raqami</label><span class="ln-req">Majburiy</span></div>
+            <input id="c-mobile" name="mobile" class="ln-input" type="tel" placeholder="（Misol）09012345678" data-rule="required" />
+        </div>
+        <button type="submit" class="ln-btn" id="apply-submit" disabled>Barcha shartlarga roziman va arizamni topshiraman.</button>
+    </form>
+</div>

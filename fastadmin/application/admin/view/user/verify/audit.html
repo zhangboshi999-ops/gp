@@ -1,0 +1,48 @@
+<form id="audit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Real_name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="form-control-static">{$row.real_name}</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Id_number')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="form-control-static">{$row.id_number}（{$row.id_type}）</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Front_image')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <img src="{:cdnurl($row.front_image)}" class="img-responsive" style="max-height:160px" alt="front">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Back_image')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <img src="{:cdnurl($row.back_image)}" class="img-responsive" style="max-height:160px" alt="back">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="radio">
+                <label for="status-pass"><input id="status-pass" name="row[status]" type="radio" value="pass" checked> 审核通过</label>
+                <label for="status-reject"><input id="status-reject" name="row[status]" type="radio" value="reject"> 驳回</label>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Remark')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-remark" name="row[remark]" class="form-control" rows="3" placeholder="审核备注"></textarea>
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-primary btn-embossed">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

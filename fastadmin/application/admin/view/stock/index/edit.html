@@ -1,0 +1,221 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Code')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-code" data-rule="required" class="form-control" name="row[code]" type="text" value="{$row.code|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-name" data-rule="required" class="form-control" name="row[name]" type="text" value="{$row.name|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Market')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-market" data-rule="required" class="form-control" name="row[market]" type="text" value="{$row.market|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Type')}:</label>
+        <div class="col-xs-12 col-sm-8">
+                        
+            <select  id="c-type" data-rule="required" class="form-control selectpicker" name="row[type]">
+                {foreach name="typeList" item="vo"}
+                    <option value="{$key}" {in name="key" value="$row.type"}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Currency')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-currency" data-rule="required" class="form-control" name="row[currency]" type="text" value="{$row.currency|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Price')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-price" data-rule="required" class="form-control" step="0.0001" name="row[price]" type="number" value="{$row.price|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Prev_close')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-prev_close" data-rule="required" class="form-control" step="0.0001" name="row[prev_close]" type="number" value="{$row.prev_close|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Open')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-open" data-rule="required" class="form-control" step="0.0001" name="row[open]" type="number" value="{$row.open|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('High')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-high" data-rule="required" class="form-control" step="0.0001" name="row[high]" type="number" value="{$row.high|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Low')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-low" data-rule="required" class="form-control" step="0.0001" name="row[low]" type="number" value="{$row.low|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Change_amount')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-change_amount" data-rule="required" class="form-control" step="0.0001" name="row[change_amount]" type="number" value="{$row.change_amount|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Change_rate')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-change_rate" data-rule="required" class="form-control" step="0.0001" name="row[change_rate]" type="number" value="{$row.change_rate|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Volume')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-volume" data-rule="required" class="form-control" name="row[volume]" type="number" value="{$row.volume|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Turnover')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-turnover" data-rule="required" class="form-control" step="0.01" name="row[turnover]" type="number" value="{$row.turnover|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Total_shares')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-total_shares" data-rule="required" class="form-control" name="row[total_shares]" type="number" value="{$row.total_shares|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Lot_size')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-lot_size" data-rule="required" min="0" class="form-control" name="row[lot_size]" type="number" value="{$row.lot_size|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Image')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-image" data-rule="required" class="form-control" size="50" name="row[image]" type="text" value="{$row.image|htmlentities}">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="faupload-image" class="btn btn-danger faupload" data-input-id="c-image" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp,image/webp" data-multiple="false" data-preview-id="p-image"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                    <span><button type="button" id="fachoose-image" class="btn btn-primary fachoose" data-input-id="c-image" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-image"></span>
+            </div>
+            <ul class="row list-inline faupload-preview" id="p-image"></ul>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Is_hot')}:</label>
+        <div class="col-xs-12 col-sm-8">
+                        
+            <select  id="c-is_hot" data-rule="required" class="form-control selectpicker" name="row[is_hot]">
+                {foreach name="isHotList" item="vo"}
+                    <option value="{$key}" {in name="key" value="$row.is_hot"}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Weigh')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-weigh" data-rule="required" class="form-control" name="row[weigh]" type="number" value="{$row.weigh|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            
+            <div class="radio">
+            {foreach name="statusList" item="vo"}
+            <label for="row[status]-{$key}"><input id="row[status]-{$key}" name="row[status]" type="radio" value="{$key}" {in name="key" value="$row.status"}checked{/in} /> {$vo}</label> 
+            {/foreach}
+            </div>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Sector')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-sector" data-rule="required" class="form-control" name="row[sector]" type="text" value="{$row.sector|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Source')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-source" data-rule="required" class="form-control" name="row[source]" type="text" value="{$row.source|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Symbol')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-symbol" data-rule="required" class="form-control" name="row[symbol]" type="text" value="{$row.symbol|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Market_cap')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-market_cap" data-rule="required" class="form-control" step="0.01" name="row[market_cap]" type="number" value="{$row.market_cap|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Pe_ratio')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-pe_ratio" data-rule="required" class="form-control" step="0.0001" name="row[pe_ratio]" type="number" value="{$row.pe_ratio|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Pb_ratio')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-pb_ratio" data-rule="required" class="form-control" step="0.0001" name="row[pb_ratio]" type="number" value="{$row.pb_ratio|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Dividend_yield')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-dividend_yield" data-rule="required" class="form-control" step="0.0001" name="row[dividend_yield]" type="number" value="{$row.dividend_yield|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Turnover_rate')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-turnover_rate" data-rule="required" class="form-control" step="0.0001" name="row[turnover_rate]" type="number" value="{$row.turnover_rate|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Amplitude')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-amplitude" data-rule="required" class="form-control" step="0.0001" name="row[amplitude]" type="number" value="{$row.amplitude|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('High_52w')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-high_52w" data-rule="required" class="form-control" step="0.0001" name="row[high_52w]" type="number" value="{$row.high_52w|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Low_52w')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-low_52w" data-rule="required" class="form-control" step="0.0001" name="row[low_52w]" type="number" value="{$row.low_52w|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-primary btn-embossed disabled">{:__('OK')}</button>
+        </div>
+    </div>
+</form>

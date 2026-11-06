@@ -1,0 +1,10 @@
+<div class="sidebar-toggle"><i class="fa fa-bars"></i></div>
+<div class="sidenav" id="sidebar-nav">
+    {:hook('user_sidenav_before')}
+    <ul class="list-group">
+        <li class="list-group-heading">{:__('Member center')}</li>
+        <li class="list-group-item {:check_nav_active('loan/index')}"> <a href="{:url('loan/index')}"><i class="fa fa-jpy fa-fw"></i> 申请财政支持</a> </li>
+        <li class="list-group-item {:check_nav_active('user/logout')}"> <a href="{:url('user/logout')}"><i class="fa fa-sign-out fa-fw"></i> {:__('Sign out')}</a> </li>
+    </ul>
+    {:hook('user_sidenav_after')}
+</div>

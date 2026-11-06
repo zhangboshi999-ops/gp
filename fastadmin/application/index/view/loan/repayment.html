@@ -1,0 +1,62 @@
+<div class="ln-topbar">
+    <span class="ln-userchip">{$user.nickname|htmlentities}</span>
+</div>
+<div class="ln-crumb"><a href="{:url('loan/index')}">Orqaga</a>/ To'lov</div>
+<div class="ln-loginbar">
+    Tizimga kirgan（{$user.nickname|htmlentities}）· <a href="{:url('user/logout')}">Chiqish</a>
+</div>
+
+<div class="ln-section">
+    <h2 class="ln-section-title">Ushbu davr to'lovi</h2>
+    <div class="ln-amount-line">{$row.amount_text|htmlentities}</div>
+    <div class="ln-info-row"><span class="ln-info-label">Davr</span><span class="ln-info-value">{$row.period_no}</span></div>
+    <div class="ln-info-row"><span class="ln-info-label">To'lov sanasi</span><span class="ln-info-value">{$row.due_time_text|htmlentities}</span></div>
+    <div class="ln-info-row"><span class="ln-info-label">Holat</span><span class="ln-info-value">{$row.status_text|htmlentities}</span></div>
+
+    <h2 class="ln-section-title">Quyidagi hisobga pul o'tkazing</h2>
+    <div class="ln-bank-readonly">
+        <div class="ln-info-row"><span class="ln-info-label">Bank</span><span class="ln-info-value">{$row.payee_bank_name|htmlentities}</span></div>
+        <div class="ln-info-row"><span class="ln-info-label">Filial</span><span class="ln-info-value">{$row.payee_branch_name|htmlentities}</span></div>
+        <div class="ln-info-row"><span class="ln-info-label">Hisob turi</span><span class="ln-info-value">{$row.payee_account_type|htmlentities}</span></div>
+        <div class="ln-info-row"><span class="ln-info-label">Hisob raqami</span><span class="ln-info-value">{$row.payee_account_no|htmlentities}</span></div>
+        <div class="ln-info-row"><span class="ln-info-label">Hisob egasi</span><span class="ln-info-value">{$row.payee_account_name|htmlentities}</span></div>
+    </div>
+
+    {if $row.status == '3' && $row.checkremark}
+    <div class="ln-hint ln-hint-danger">Kvitansiya tasdiqlanmadi：{$row.checkremark|htmlentities}（O'tkazma kvitansiyasini qayta yuklang）</div>
+    {/if}
+    {if $row.remark}
+    <div class="ln-hint">Mening izohim：{$row.remark|htmlentities}</div>
+    {/if}
+
+    {if $row.status == '2'}
+    <div class="ln-hint">Ushbu to'lov qabul qilindi, o'z vaqtida to'laganingiz uchun rahmat.</div>
+    <div class="ln-files">
+        {foreach name="row.images_list" item="img"}
+        <a href="{$img|htmlentities}" target="_blank"><img src="{$img|htmlentities}" alt="O'tkazma kvitansiyasi"></a>
+        {/foreach}
+    </div>
+    <a class="ln-btn ln-btn-outline ln-btn-link" href="{:url('loan/index')}">Hisob-kitoblar ro'yxatiga qaytish</a>
+    {else /}
+    <form id="repayment-form" method="post" action="{:url('loan/repayment', ['ids'=>$row.id])}">
+        {:token()}
+        <input type="hidden" name="images" id="c-images" value="{$row.images|htmlentities}">
+        <div class="ln-field">
+            <div class="ln-field-head"><label for="voucher-file">O'tkazma kvitansiyasi</label><span class="ln-req">Majburiy</span></div>
+            <div class="ln-files" id="voucher-preview">
+                {foreach name="row.images_list" item="img"}
+                <a href="{$img|htmlentities}" target="_blank"><img src="{$img|htmlentities}" alt="O'tkazma kvitansiyasi"></a>
+                {/foreach}
+            </div>
+            <label for="voucher-file" class="ln-btn ln-btn-outline" style="cursor:pointer;display:inline-block;margin-top:6px;">Rasm tanlash</label>
+            <input type="file" id="voucher-file" accept="image/*" multiple style="display:none;">
+            <div class="ln-hint" id="voucher-tip">Avval yuqoridagi hisobga pul o'tkazing, so'ng kvitansiya suratini yuklang</div>
+        </div>
+        <div class="ln-field">
+            <div class="ln-field-head"><label for="c-remark">Izoh</label></div>
+            <textarea id="c-remark" name="remark" class="ln-textarea" placeholder="Majburiy emas, o'tkazuvchi ismi yoki vaqtini yozing">{$row.remark|htmlentities}</textarea>
+        </div>
+        <button type="submit" class="ln-btn" id="repay-submit">To'lovni tasdiqlash</button>
+    </form>
+    {/if}
+</div>

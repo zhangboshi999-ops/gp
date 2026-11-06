@@ -1,0 +1,39 @@
+<div class="ln-section">
+    <h2 class="ln-section-title">Bank kartasini qo'shish</h2>
+
+    {if $bank}
+    <div class="ln-note">Hisobingiz ro'yxatdan o'tgan, uni o'zgartirib bo'lmaydi.</div>
+    <div class="ln-bank-readonly">
+        <div class="ln-info-row"><span class="ln-info-label">Hisob nomi</span><span class="ln-info-value">{$bank.account_name|htmlentities}</span></div>
+        <div class="ln-info-row"><span class="ln-info-label">Hisob raqami</span><span class="ln-info-value">{$bank.account_no_text|htmlentities}</span></div>
+        <div class="ln-info-row"><span class="ln-info-label">Bank nomi</span><span class="ln-info-value">{$bank.bank_name|htmlentities}</span></div>
+        <div class="ln-info-row"><span class="ln-info-label">Hisob turi</span><span class="ln-info-value">{$bank.account_type_text|htmlentities}</span></div>
+    </div>
+    {else /}
+    <div class="ln-note">Ro'yxatdan o'tgach o'zgartirib bo'lmaydi.</div>
+    <form id="bank-form" method="post" action="{:url('loan/bank')}">
+        {:token()}
+        <div class="ln-field">
+            <div class="ln-field-head"><label for="c-account_name">Hisob nomi</label><span class="ln-req">Majburiy</span></div>
+            <input id="c-account_name" name="account_name" class="ln-input" type="text" placeholder="Hisob egasining ismini kiriting." data-rule="required" />
+        </div>
+        <div class="ln-field">
+            <div class="ln-field-head"><label for="c-account_no">Hisob raqami</label><span class="ln-req">Majburiy</span></div>
+            <input id="c-account_no" name="account_no" class="ln-input" type="text" placeholder="Hisob raqamingizni kiriting." data-rule="required" />
+        </div>
+        <div class="ln-field">
+            <div class="ln-field-head"><label for="c-bank_name">Bank nomi</label><span class="ln-req">Majburiy</span></div>
+            <input id="c-bank_name" name="bank_name" class="ln-input" type="text" placeholder="Bank nomini kiriting." data-rule="required" />
+        </div>
+        <div class="ln-field">
+            <div class="ln-field-head"><label for="c-account_type">Hisob turi</label><span class="ln-req">Majburiy</span></div>
+            <select id="c-account_type" name="account_type" class="ln-select" data-rule="required">
+                {foreach name="accountTypes" item="type"}
+                <option value="{$key}">{$type}</option>
+                {/foreach}
+            </select>
+        </div>
+        <button type="submit" class="ln-btn">Yuborish</button>
+    </form>
+    {/if}
+</div>

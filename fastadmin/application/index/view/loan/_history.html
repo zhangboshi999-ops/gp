@@ -1,0 +1,21 @@
+<div class="ln-section">
+    <h2 class="ln-section-title">Ariza tarixi</h2>
+    {if $history}
+    {foreach name="history" item="item"}
+    <div class="ln-history-item">
+        <div class="ln-badge ln-badge-{$item.status_class|htmlentities}">{$item.status_text|htmlentities}</div>
+        <div class="ln-info-row"><span class="ln-info-label">Ism</span><span class="ln-info-value">{$item.name|htmlentities}</span></div>
+        <div class="ln-info-row"><span class="ln-info-label">Telefon raqami</span><span class="ln-info-value">{$item.mobile|htmlentities}</span></div>
+        <div class="ln-info-row"><span class="ln-info-label">Elektron pochta</span><span class="ln-info-value">{$item.email|htmlentities}</span></div>
+        <div class="ln-info-row"><span class="ln-info-label">So'ralgan summa</span><span class="ln-info-value">{$item.amount}</span></div>
+        <div class="ln-info-row"><span class="ln-info-label">Maqsad</span><span class="ln-info-value">{$item.purpose|htmlentities}</span></div>
+        {if $item.status == '2' && $item.checkremark}
+        <div class="ln-info-row"><span class="ln-info-label">Rad etish sababi</span><span class="ln-info-value">{$item.checkremark|htmlentities}</span></div>
+        {/if}
+        <div class="ln-history-foot">Ariza vaqti：{$item.createtime_text|htmlentities}</div>
+    </div>
+    {/foreach}
+    {else /}
+    <div class="ln-hint">Ariza yozuvlari yo'q</div>
+    {/if}
+</div>

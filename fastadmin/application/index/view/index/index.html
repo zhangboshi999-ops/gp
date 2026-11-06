@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{$site.name|htmlentities} - 您的资金支持服务平台</title>
+    <link rel="shortcut icon" href="__CDN__/assets/img/favicon.ico"/>
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-2: #6366f1;
+            --accent: #a855f7;
+            --ink: #0b1020;
+            --muted: #5b6478;
+            --line: #e6e8f0;
+            --bg: #ffffff;
+            --bg-soft: #f7f8fd;
+            --grad: linear-gradient(120deg, #4f46e5 0%, #7c3aed 55%, #c026d3 100%);
+            --shadow-sm: 0 1px 2px rgba(16, 24, 40, .05);
+            --shadow-md: 0 12px 32px -12px rgba(15, 23, 42, .18);
+            --shadow-lg: 0 24px 60px -24px rgba(79, 70, 229, .45);
+            --radius: 20px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            color: var(--ink); background: var(--bg); line-height: 1.65;
+            -webkit-font-smoothing: antialiased; overflow-x: hidden;
+        }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
+
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+            padding: 12px 24px; border-radius: 12px; font-size: 15px; font-weight: 600;
+            border: 1px solid transparent; cursor: pointer; transition: transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease;
+            white-space: nowrap;
+        }
+        .btn-primary {
+            color: #fff; background-image: var(--grad);
+            box-shadow: 0 10px 24px -10px rgba(124, 58, 237, .65);
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 18px 34px -12px rgba(124, 58, 237, .7); }
+        .btn-ghost { color: var(--ink); background: #fff; border-color: var(--line); box-shadow: var(--shadow-sm); }
+        .btn-ghost:hover { border-color: #d3d7e4; transform: translateY(-2px); }
+        .btn-lg { padding: 16px 34px; font-size: 16px; border-radius: 14px; }
+
+        /* 导航 */
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(255, 255, 255, .8);
+            backdrop-filter: saturate(180%) blur(14px);
+            border-bottom: 1px solid transparent;
+            transition: border-color .25s ease, background .25s ease;
+        }
+        .nav.scrolled { border-bottom-color: var(--line); background: rgba(255,255,255,.92); }
+        .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 70px; }
+        .brand { display: flex; align-items: center; gap: 10px; font-size: 20px; font-weight: 800; letter-spacing: -.4px; }
+        .brand .logo {
+            width: 34px; height: 34px; border-radius: 10px; background-image: var(--grad);
+            display: inline-flex; align-items: center; justify-content: center; color: #fff; font-size: 17px; font-weight: 800;
+            box-shadow: 0 6px 14px -6px rgba(124,58,237,.6);
+        }
+        .nav-links { display: flex; align-items: center; gap: 30px; }
+        .nav-links a { color: var(--muted); font-size: 15px; font-weight: 500; transition: color .15s; }
+        .nav-links a:hover { color: var(--primary); }
+        .nav-actions { display: flex; align-items: center; gap: 12px; }
+
+        /* Hero */
+        .hero {
+            position: relative; padding: 168px 0 120px; overflow: hidden;
+            background:
+                radial-gradient(900px 480px at 12% -8%, rgba(168, 85, 247, .16), transparent 60%),
+                radial-gradient(820px 460px at 92% 0%, rgba(79, 70, 229, .18), transparent 55%),
+                linear-gradient(180deg, #fbfaff 0%, #fff 100%);
+        }
+        .hero::before {
+            content: ""; position: absolute; inset: 0;
+            background-image: linear-gradient(rgba(79,70,229,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(79,70,229,.05) 1px, transparent 1px);
+            background-size: 44px 44px;
+            -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 30%, transparent 70%);
+            mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 30%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero-grid { position: relative; display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; }
+        .hero .badge {
+            display: inline-flex; align-items: center; gap: 8px; padding: 7px 15px; border-radius: 999px;
+            background: #fff; border: 1px solid var(--line); color: var(--primary-2); font-size: 13px; font-weight: 600;
+            box-shadow: var(--shadow-sm); margin-bottom: 24px;
+        }
+        .hero .badge .dot { width: 7px; height: 7px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 0 4px rgba(34,197,94,.15); }
+        .hero h1 { font-size: 56px; font-weight: 800; letter-spacing: -1.6px; line-height: 1.12; }
+        .hero h1 .grad { background-image: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .hero .sub { max-width: 540px; margin: 22px 0 0; color: var(--muted); font-size: 18px; }
+        .hero .cta { margin-top: 36px; display: flex; gap: 14px; flex-wrap: wrap; }
+        .hero .mini {
+            margin-top: 26px; display: flex; gap: 22px; flex-wrap: wrap; color: #8a92a6; font-size: 13.5px;
+        }
+        .hero .mini span { display: inline-flex; align-items: center; gap: 6px; }
+        .hero .mini svg { color: #22c55e; flex: none; }
+
+        /* 右侧视觉卡片 */
+        .visual { position: relative; }
+        .visual .glow {
+            position: absolute; inset: 8% 4%; border-radius: 34px;
+            background-image: var(--grad); filter: blur(48px); opacity: .35; z-index: 0;
+        }
+        .mock {
+            position: relative; z-index: 1; background: rgba(255,255,255,.9);
+            border: 1px solid rgba(255,255,255,.9); border-radius: 24px;
+            box-shadow: var(--shadow-lg); padding: 26px; backdrop-filter: blur(8px);
+        }
+        .mock .m-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+        .mock .m-head .t { font-size: 14px; color: var(--muted); }
+        .mock .m-head .amt { font-size: 26px; font-weight: 800; letter-spacing: -.5px; }
+        .mock .amount-row { display: flex; justify-content: space-between; padding: 14px 0; border-top: 1px dashed var(--line); font-size: 14px; color: var(--muted); }
+        .mock .amount-row b { color: var(--ink); font-weight: 700; }
+        .mock .bar { height: 8px; border-radius: 99px; background: #eef0f7; overflow: hidden; margin: 16px 0 12px; }
+        .mock .bar i { display: block; height: 100%; width: 82%; border-radius: 99px; background-image: var(--grad); }
+        .mock .steps-line { display: flex; justify-content: space-between; font-size: 12px; color: #8a92a6; }
+        .mock .steps-line .on { color: var(--primary); font-weight: 600; }
+        .float-card {
+            position: absolute; z-index: 2; background: #fff; border-radius: 16px; padding: 14px 18px;
+            box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 12px; font-size: 14px;
+        }
+        .float-card .ic { width: 38px; height: 38px; border-radius: 11px; display: flex; align-items: center; justify-content: center; }
+        .float-card .ic svg { width: 20px; height: 20px; }
+        .float-card b { display: block; font-size: 14.5px; }
+        .float-card span { color: var(--muted); font-size: 12px; }
+        .fc-1 { top: -22px; right: -10px; animation: float 5s ease-in-out infinite; }
+        .fc-2 { bottom: -20px; left: -18px; animation: float 6s ease-in-out infinite reverse; }
+        @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+
+        /* 区块 */
+        section { padding: 96px 0; }
+        .sec-head { text-align: center; max-width: 640px; margin: 0 auto 60px; }
+        .sec-head .tag {
+            display: inline-block; padding: 5px 13px; border-radius: 999px; background: #eef2ff;
+            color: var(--primary-2); font-size: 12.5px; font-weight: 700; letter-spacing: .4px; margin-bottom: 16px; text-transform: uppercase;
+        }
+        .sec-head h2 { font-size: 36px; font-weight: 800; letter-spacing: -.8px; line-height: 1.2; }
+        .sec-head p { color: var(--muted); margin-top: 14px; font-size: 16.5px; }
+
+        /* 优势 */
+        .features { background: var(--bg-soft); }
+        .grid { display: grid; gap: 24px; }
+        .grid-4 { grid-template-columns: repeat(4, 1fr); }
+        .card {
+            background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 32px 28px;
+            transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; position: relative; overflow: hidden;
+        }
+        .card::after {
+            content: ""; position: absolute; left: 0; right: 0; top: 0; height: 3px; opacity: 0; transition: opacity .2s;
+            background-image: var(--grad);
+        }
+        .card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: transparent; }
+        .card:hover::after { opacity: 1; }
+        .card .icon {
+            width: 54px; height: 54px; border-radius: 15px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;
+            color: #fff;
+        }
+        .card .icon svg { width: 26px; height: 26px; }
+        .ic-1 { background: linear-gradient(135deg, #6366f1, #4f46e5); box-shadow: 0 10px 22px -10px rgba(99,102,241,.7); }
+        .ic-2 { background: linear-gradient(135deg, #a855f7, #7c3aed); box-shadow: 0 10px 22px -10px rgba(168,85,247,.7); }
+        .ic-3 { background: linear-gradient(135deg, #10b981, #059669); box-shadow: 0 10px 22px -10px rgba(16,185,129,.7); }
+        .ic-4 { background: linear-gradient(135deg, #f59e0b, #ea580c); box-shadow: 0 10px 22px -10px rgba(245,158,11,.7); }
+        .card h3 { font-size: 18.5px; margin-bottom: 10px; }
+        .card p { color: var(--muted); font-size: 14.5px; }
+
+        /* 数据带 */
+        .stats { padding: 0; }
+        .stats-band {
+            background: var(--ink); border-radius: 26px; padding: 54px 40px; color: #fff;
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center;
+            background-image: radial-gradient(600px 200px at 20% 0%, rgba(124,58,237,.45), transparent 60%),
+                              radial-gradient(600px 200px at 85% 100%, rgba(79,70,229,.45), transparent 60%);
+        }
+        .stats-band .n { font-size: 42px; font-weight: 800; letter-spacing: -1px; }
+        .stats-band .n small { font-size: 22px; }
+        .stats-band .l { color: #aab0c4; font-size: 14px; margin-top: 6px; }
+
+        /* 流程 */
+        .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; position: relative; }
+        .step { text-align: center; padding: 34px 26px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); position: relative; }
+        .step .num {
+            position: absolute; top: -24px; left: 50%; transform: translateX(-50%);
+            width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 19px; font-weight: 800; color: #fff; background-image: var(--grad);
+            box-shadow: 0 10px 22px -8px rgba(124,58,237,.7); border: 4px solid #fff;
+        }
+        .step h3 { font-size: 18.5px; margin: 14px 0 10px; }
+        .step p { color: var(--muted); font-size: 14.5px; }
+        .step .step-icon { font-size: 28px; margin-top: 8px; }
+
+        /* FAQ */
+        .faq { background: var(--bg-soft); }
+        .faq-list { max-width: 780px; margin: 0 auto; display: grid; gap: 14px; }
+        .faq-item { background: #fff; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+        .faq-item summary {
+            list-style: none; cursor: pointer; padding: 20px 24px; font-weight: 600; font-size: 16px;
+            display: flex; align-items: center; justify-content: space-between; gap: 16px;
+        }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary::after { content: "+"; font-size: 22px; color: var(--primary-2); transition: transform .2s; }
+        .faq-item[open] summary::after { transform: rotate(45deg); }
+        .faq-item .a { padding: 0 24px 22px; color: var(--muted); font-size: 14.5px; }
+
+        /* CTA */
+        .cta-band {
+            position: relative; overflow: hidden; border-radius: 28px; padding: 72px 48px; text-align: center; color: #fff;
+            background-image: radial-gradient(700px 300px at 20% 0%, rgba(255,255,255,.18), transparent 55%),
+                              radial-gradient(700px 300px at 85% 100%, rgba(255,255,255,.14), transparent 55%),
+                              var(--grad);
+        }
+        .cta-band h2 { font-size: 34px; font-weight: 800; letter-spacing: -.6px; }
+        .cta-band p { margin-top: 14px; opacity: .92; font-size: 16.5px; }
+        .cta-band .cta { margin-top: 32px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+        .cta-band .btn { background: #fff; color: var(--primary); box-shadow: 0 16px 34px -14px rgba(0,0,0,.4); }
+        .cta-band .btn:hover { transform: translateY(-2px); }
+        .cta-band .btn-ghost { background: rgba(255,255,255,.12); color: #fff; border-color: rgba(255,255,255,.35); }
+
+        /* 页脚 */
+        footer { border-top: 1px solid var(--line); padding: 48px 0; }
+        .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+        .footer-links { display: flex; gap: 22px; color: var(--muted); font-size: 14px; }
+        .footer-links a:hover { color: var(--ink); }
+        footer .copy { color: #9aa1b2; font-size: 13px; }
+        footer .copy a:hover { color: var(--ink); }
+
+        /* 滚动显现动画 */
+        .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
+        .reveal.in { opacity: 1; transform: none; }
+
+        @media (max-width: 980px) {
+            .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+            .hero { padding: 140px 0 80px; }
+            .hero h1 { font-size: 40px; }
+            .visual { max-width: 440px; margin: 0 auto; }
+            .grid-4 { grid-template-columns: repeat(2, 1fr); }
+            .stats-band { grid-template-columns: repeat(2, 1fr); }
+            .nav-links { display: none; }
+        }
+        @media (max-width: 560px) {
+            .hero h1 { font-size: 32px; }
+            .grid-4 { grid-template-columns: 1fr; }
+            .steps { grid-template-columns: 1fr; }
+            .cta-band { padding: 56px 26px; }
+            .float-card { display: none; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .reveal { opacity: 1; transform: none; transition: none; }
+            .float-card { animation: none !important; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="nav" id="nav">
+        <div class="container nav-inner">
+            <a class="brand" href="{:url('/')}">
+                <span class="logo">{$site.name|substr=0,1|htmlentities}</span>
+                {$site.name|htmlentities}
+            </a>
+            <div class="nav-links">
+                <a href="#features">平台优势</a>
+                <a href="#how">申请流程</a>
+                <a href="#faq">常见问题</a>
+            </div>
+            <div class="nav-actions">
+                {if $user}
+                <a class="btn btn-primary" href="{:url('loan/index')}">进入会员中心</a>
+                {else /}
+                <a class="btn btn-ghost" href="{:url('user/login')}">登录</a>
+                <a class="btn btn-primary" href="{:url('user/register')}">立即注册</a>
+                {/if}
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container hero-grid">
+            <div>
+                <span class="badge"><span class="dot"></span> 全程线上办理 · 流程公开透明</span>
+                <h1>资金周转，<br/>不再焦虑。<span class="grad">今天申请，快速审批。</span></h1>
+                <p class="sub">{$site.name|htmlentities} 为您提供便捷、安全的资金支持服务。额度灵活、还款方案清晰，让每一笔资金需求都简单起来。</p>
+                <div class="cta">
+                    {if $user}
+                    <a class="btn btn-primary btn-lg" href="{:url('loan/index')}">进入会员中心 →</a>
+                    {else /}
+                    <a class="btn btn-primary btn-lg" href="{:url('user/register')}">免费注册，立即申请 →</a>
+                    <a class="btn btn-ghost btn-lg" href="#how">了解申请流程</a>
+                    {/if}
+                </div>
+                <div class="mini">
+                    <span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> 资料安全加密</span>
+                    <span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> 无隐藏费用</span>
+                    <span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> 进度随时可查</span>
+                </div>
+            </div>
+
+            <div class="visual">
+                <div class="glow"></div>
+                <div class="mock">
+                    <div class="m-head">
+                        <span class="t">资金申请进度</span>
+                        <span class="t" style="color:#22c55e;font-weight:600;">审批中</span>
+                    </div>
+                    <div class="m-head" style="margin-bottom:6px;">
+                        <span class="t">申请额度</span>
+                        <span class="amt">¥50,000</span>
+                    </div>
+                    <div class="amount-row"><span>还款期数</span><b>12 期</b></div>
+                    <div class="amount-row"><span>提交时间</span><b>今天 10:24</b></div>
+                    <div class="bar"><i></i></div>
+                    <div class="steps-line">
+                        <span class="on">● 已提交</span>
+                        <span class="on">● 审核中</span>
+                        <span>○ 待放款</span>
+                    </div>
+                </div>
+                <div class="float-card fc-1">
+                    <span class="ic" style="background:#eef2ff;color:#4f46e5;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+                    <div><b>审核通过</b><span>额度已生效</span></div>
+                </div>
+                <div class="float-card fc-2">
+                    <span class="ic" style="background:#ecfdf5;color:#059669;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M2 10h20"/></svg></span>
+                    <div><b>资金到账</b><span>秒级到账提醒</span></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="stats">
+        <div class="container">
+            <div class="stats-band reveal">
+                <div><div class="n">3<small> 步</small></div><div class="l">完成申请</div></div>
+                <div><div class="n">7×24</div><div class="l">随时提交</div></div>
+                <div><div class="n">100<small>%</small></div><div class="l">线上办理</div></div>
+                <div><div class="n">全程</div><div class="l">进度透明</div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <div class="sec-head reveal">
+                <span class="tag">Why us</span>
+                <h2>为什么选择 {$site.name|htmlentities}</h2>
+                <p>把复杂留给系统，把简单留给您</p>
+            </div>
+            <div class="grid grid-4">
+                <div class="card reveal">
+                    <div class="icon ic-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 11-13h-7z"/></svg></div>
+                    <h3>申请便捷</h3>
+                    <p>线上提交资料，无需繁琐手续，随时随地完成申请。</p>
+                </div>
+                <div class="card reveal">
+                    <div class="icon ic-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+                    <h3>审批高效</h3>
+                    <p>提交后快速进入审核，减少等待，资金更快到位。</p>
+                </div>
+                <div class="card reveal">
+                    <div class="icon ic-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 9.5a3 3 0 1 0 0 5h4.5a1.5 1.5 0 0 0 0-3H9.5"/></svg></div>
+                    <h3>额度灵活</h3>
+                    <p>根据实际情况匹配额度，支持分期还款，压力更小。</p>
+                </div>
+                <div class="card reveal">
+                    <div class="icon ic-4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
+                    <h3>安全可靠</h3>
+                    <p>全站信息加密，严格保护您的隐私与账户安全。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how">
+        <div class="container">
+            <div class="sec-head reveal">
+                <span class="tag">How it works</span>
+                <h2>三步完成申请</h2>
+                <p>从注册到提交，几分钟即可搞定</p>
+            </div>
+            <div class="steps">
+                <div class="step reveal">
+                    <div class="num">1</div>
+                    <div class="step-icon">👤</div>
+                    <h3>注册账号</h3>
+                    <p>填写用户名和密码，快速创建属于您的会员账户。</p>
+                </div>
+                <div class="step reveal">
+                    <div class="num">2</div>
+                    <div class="step-icon">📝</div>
+                    <h3>提交申请</h3>
+                    <p>按指引填写申请信息，选择合适额度与还款期数。</p>
+                </div>
+                <div class="step reveal">
+                    <div class="num">3</div>
+                    <div class="step-icon">🚀</div>
+                    <h3>审核到账</h3>
+                    <p>平台审核通过后，资金按约定安排发放，进度随时可查。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="sec-head reveal">
+                <span class="tag">FAQ</span>
+                <h2>常见问题</h2>
+                <p>您关心的，我们都整理好了</p>
+            </div>
+            <div class="faq-list reveal">
+                <details class="faq-item">
+                    <summary>注册需要收费吗？</summary>
+                    <div class="a">注册完全免费。提交申请后，平台会依据实际情况进行审核，全程无隐藏费用。</div>
+                </details>
+                <details class="faq-item">
+                    <summary>申请需要准备哪些资料？</summary>
+                    <div class="a">按页面指引填写基本申请信息即可，部分场景可能需要补充必要的证明材料，提交前会有明确提示。</div>
+                </details>
+                <details class="faq-item">
+                    <summary>如何查看申请进度？</summary>
+                    <div class="a">登录会员中心即可实时查看申请与还款进度，关键节点也会有相应提醒。</div>
+                </details>
+                <details class="faq-item">
+                    <summary>我的信息是否安全？</summary>
+                    <div class="a">平台对全站信息进行加密传输与存储，严格保护您的账户与隐私数据安全。</div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <section id="cta">
+        <div class="container">
+            <div class="cta-band reveal">
+                <h2>准备好开始了吗？</h2>
+                <p>现在注册，几分钟内即可提交您的资金申请</p>
+                <div class="cta">
+                    {if $user}
+                    <a class="btn btn-lg" href="{:url('loan/index')}">进入会员中心 →</a>
+                    {else /}
+                    <a class="btn btn-lg" href="{:url('user/register')}">免费注册</a>
+                    <a class="btn btn-ghost btn-lg" href="{:url('user/login')}">已有账号，去登录</a>
+                    {/if}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-inner">
+            <a class="brand" href="{:url('/')}">
+                <span class="logo">{$site.name|substr=0,1|htmlentities}</span>
+                {$site.name|htmlentities}
+            </a>
+            <div class="footer-links">
+                <a href="#features">平台优势</a>
+                <a href="#how">申请流程</a>
+                <a href="#faq">常见问题</a>
+            </div>
+            <p class="copy">© {:date('Y', time())} {$site.name|htmlentities} · 版权所有
+                {if $site.beian}<a href="https://beian.miit.gov.cn" target="_blank">{$site.beian|htmlentities}</a>{/if}
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // 导航栏滚动状态
+        var nav = document.getElementById('nav');
+        function onScroll() {
+            nav.classList.toggle('scrolled', window.scrollY > 12);
+        }
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+
+        // 滚动显现动画
+        var revealEls = document.querySelectorAll('.reveal');
+        if ('IntersectionObserver' in window) {
+            var io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (e) {
+                    if (e.isIntersecting) {
+                        e.target.classList.add('in');
+                        io.unobserve(e.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+            revealEls.forEach(function (el) { io.observe(el); });
+        } else {
+            revealEls.forEach(function (el) { el.classList.add('in'); });
+        }
+    </script>
+
+</body>
+
+</html>

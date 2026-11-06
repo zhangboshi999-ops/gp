@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{$title|default=''|htmlentities} – {$site.name|htmlentities}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="shortcut icon" href="__CDN__/assets/img/favicon.ico" />
+    <link href="__CDN__/assets/ondeck/fonts/poppins.css" rel="stylesheet">
+    <link href="__CDN__/assets/css/user.css?v={$Think.config.site.version|htmlentities}" rel="stylesheet">
+    <link href="__CDN__/assets/ondeck/styles.min.css" rel="stylesheet">
+    <link href="__CDN__/assets/libs/toastr/toastr.min.css" rel="stylesheet">
+    <link href="__CDN__/assets/libs/nice-validator/dist/jquery.validator.css" rel="stylesheet">
+    <script type="text/javascript">
+        // 修正 layer 弹层组件 CSS 加载路径(require 异步加载时 document.currentScript 解析不到,导致 layer.css 404)
+        window.LAYUI_GLOBAL = window.LAYUI_GLOBAL || {};
+        window.LAYUI_GLOBAL.layer_dir = "__CDN__/assets/libs/fastadmin-layer/dist/";
+    </script>
+    <script type="text/javascript">
+        var require = {
+            config: {$config|json_encode}
+        };
+    </script>
+</head>
+<body>
+    {include file="common/ondeck_header" /}
+    {__CONTENT__}
+    {include file="common/ondeck_footer" /}
+    <script src="__CDN__/assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="__CDN__/assets/ondeck/scripts.min.js"></script>
+    {include file="common/script" /}
+</body>
+</html>

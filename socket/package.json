@@ -1,0 +1,15 @@
+{
+  "name": "stock-socket",
+  "version": "1.0.0",
+  "private": true,
+  "description": "证券 App 实时行情 WebSocket 服务（Redis 订阅 → 浏览器推送）",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "redis": "^4.7.0",
+    "ws": "^8.18.0"
+  }
+}

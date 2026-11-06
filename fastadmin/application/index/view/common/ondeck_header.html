@@ -1,0 +1,59 @@
+<div class="site-container">
+  <header class="sticky-top bg-white">
+    <nav class="navbar navbar-expand-xl">
+      <div class="container">
+        <button id="mobile-menu-toggle" class="hamburger d-xl-none" type="button" data-bs-toggle="offcanvas" href="#mobile-menu" aria-controls="mobile-menu" aria-label="Menyuni ochish">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
+        <a class="navbar-brand" href="{:url('/')}" style="font-weight:800;color:#000082;">{$site.name|htmlentities}</a>
+        <div class="collapse navbar-collapse">
+          <ul id="main-nav" class="navbar-nav">
+
+
+</ul>          <ul class="navbar-nav ms-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                400-000-0000
+              </a>
+              <div class="dropdown-menu">
+                <p class="dropdown-item mb-0">
+                  Dushanba - Juma<br />
+                  Soat 9:00 - 19:00
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+                  {if $user}
+          <a class="btn btn-sm btn-primary text-nowrap ms-auto ms-xl-4" href="{:url('loan/index')}">A'zolar markazi</a>
+          <a class="btn btn-sm btn-outline-primary text-nowrap ms-auto ms-xl-4" href="{:url('user/logout')}">Chiqish</a>
+          {else /}
+          <a class="btn btn-sm btn-outline-primary text-nowrap d-none d-xl-inline ms-auto ms-xl-4" href="{:url('user/login')}">Kirish</a>
+          <a class="btn btn-sm btn-primary text-nowrap ms-auto ms-xl-4" href="{:url('user/register')}">Ro'yxatdan o'tish</a>
+          {/if}
+              </div>
+    </nav>
+  </header>
+  <nav class="offcanvas offcanvas-start d-xl-none" tabindex="-1" id="mobile-menu" aria-labelledby="mobile-menu-toggle">
+    <ul id="main-nav-mobile" class="nav accordion">
+
+
+</ul>    <div class="contact">
+      <p class="text-white text-center">
+        <a href="tel:4000000000">400-000-0000</a><br />
+        Dushanba - Juma<br />
+        Soat 9:00 - 19:00
+      </p>
+              {if $user}
+              <a class="btn btn-outline-light d-block" href="{:url('loan/index')}">A'zolar markazi</a>
+              {else /}
+              <a class="btn btn-outline-light d-block" href="{:url('user/login')}">Kirish</a>
+              {/if}
+            <button type="button" class="visually-hidden-focusable btn btn-outline-light w-100 mt-4" data-bs-dismiss="offcanvas">Menyuni yopish</button>
+    </div>
+  </nav>
+
+  
+  <main>

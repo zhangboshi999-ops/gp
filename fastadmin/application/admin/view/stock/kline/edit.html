@@ -1,0 +1,69 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Stock_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-stock_id" data-rule="required" min="0" data-source="stock/index" class="form-control selectpage" name="row[stock_id]" type="text" value="{$row.stock_id|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Code')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-code" data-rule="required" class="form-control" name="row[code]" type="text" value="{$row.code|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Period')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-period" data-rule="required" class="form-control" name="row[period]" type="text" value="{$row.period|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Time')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-time" data-rule="required" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[time]" type="text" value="{:$row.time?datetime($row.time):''}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Open')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-open" data-rule="required" class="form-control" step="0.0001" name="row[open]" type="number" value="{$row.open|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('High')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-high" data-rule="required" class="form-control" step="0.0001" name="row[high]" type="number" value="{$row.high|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Low')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-low" data-rule="required" class="form-control" step="0.0001" name="row[low]" type="number" value="{$row.low|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Close')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-close" data-rule="required" class="form-control" step="0.0001" name="row[close]" type="number" value="{$row.close|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Volume')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-volume" data-rule="required" class="form-control" name="row[volume]" type="number" value="{$row.volume|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Date')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-date" data-rule="required" class="form-control" name="row[date]" type="text" value="{$row.date|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-primary btn-embossed disabled">{:__('OK')}</button>
+        </div>
+    </div>
+</form>

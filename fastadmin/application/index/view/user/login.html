@@ -1,0 +1,87 @@
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div class="card border-0 shadow" style="border-radius: 18px;">
+                <div class="card-body p-4 p-md-5">
+                    <h2 class="text-center fw-bold mb-1" style="color: #000082;">Kirish</h2>
+                    <p class="text-center text-muted mb-4">Xush kelibsiz, hisobingizga kiring</p>
+                    <form name="form" id="login-form" method="POST" action="">
+                        <input type="hidden" name="url" value="{$url|htmlentities}"/>
+                        {:token()}
+                        <div class="form-group mb-3">
+                            <label class="control-label form-label" for="account">Hisob</label>
+                            <input class="form-control" id="account" type="text" name="account" value="" data-rule="required" placeholder="Email / telefon / foydalanuvchi nomi" autocomplete="off">
+                            <span class="msg-box"></span>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label class="control-label form-label" for="password">Parol</label>
+                            <input class="form-control" id="password" type="password" name="password" data-rule="required;password" placeholder="Parolni kiriting" autocomplete="off">
+                            <span class="msg-box"></span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <div class="form-check mb-0">
+                                <input class="form-check-input" type="checkbox" name="keeplogin" id="keeplogin" checked="checked" value="1">
+                                <label class="form-check-label" for="keeplogin">Eslab qolish</label>
+                            </div>
+                            <a href="javascript:;" class="btn-forgot text-decoration-none" style="color: #0064dd;">Parolni unutdingizmi?</a>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 py-2 mb-3">Kirish</button>
+                        <a href="{:url('user/register')}?url={$url|urlencode|htmlentities}" class="btn btn-outline-primary w-100 py-2">Hisobingiz yo'qmi? Ro'yxatdan o'ting</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .form-group .form-label { font-weight: 600; color: #0b1c33; }
+    .msg-box { display: block; color: #dc3545; font-size: 13px; min-height: 18px; margin-top: 4px; }
+    .form-group.has-error .form-control { border-color: #dc3545; }
+    .form-group.has-success .form-control { border-color: #198754; }
+    #resetpwd-form .form-check-label { opacity: 1; cursor: pointer; }
+</style>
+
+<script type="text/html" id="resetpwdtpl">
+    <form id="resetpwd-form" class="form-layer p-3" method="POST" action="{:url('api/user/resetpwd')}">
+        <input type="hidden" name="action" value="resetpwd"/>
+        <div class="form-group mb-3">
+            <div class="d-flex gap-4">
+                <div class="form-check">
+                    <input class="form-check-input" id="type-email" checked="checked" name="type" data-send-url="{:url('api/ems/send')}" data-check-url="{:url('api/validate/check_ems_correct')}" type="radio" value="email">
+                    <label class="form-check-label" for="type-email">{:__('Reset password by email')}</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" id="type-mobile" name="type" type="radio" data-send-url="{:url('api/sms/send')}" data-check-url="{:url('api/validate/check_sms_correct')}" value="mobile">
+                    <label class="form-check-label" for="type-mobile">{:__('Reset password by mobile')}</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group mb-3" data-type="email">
+            <label for="email" class="control-label form-label">{:__('Email')}</label>
+            <input type="text" class="form-control" id="email" name="email" value="" data-rule="required(#type-email:checked);email;remote({:url('api/validate/check_email_exist')}, event=resetpwd, id=0)" placeholder="">
+            <span class="msg-box"></span>
+        </div>
+        <div class="form-group mb-3 d-none" data-type="mobile">
+            <label for="mobile" class="control-label form-label">{:__('Mobile')}</label>
+            <input type="text" class="form-control" id="mobile" name="mobile" value="" data-rule="required(#type-mobile:checked);mobile;remote({:url('api/validate/check_mobile_exist')}, event=resetpwd, id=0)" placeholder="">
+            <span class="msg-box"></span>
+        </div>
+        <div class="form-group mb-3">
+            <label for="captcha" class="control-label form-label">{:__('Captcha')}</label>
+            <div class="input-group">
+                <input type="text" name="captcha" id="captcha" class="form-control" data-rule="required;length({$Think.config.captcha.length});digits;remote({:url('api/validate/check_ems_correct')}, event=resetpwd, email:#email)"/>
+                <a href="javascript:;" class="btn btn-primary btn-captcha" data-url="{:url('api/ems/send')}" data-type="email" data-event="resetpwd">{:__('Send verification code')}</a>
+            </div>
+            <span class="msg-box"></span>
+        </div>
+        <div class="form-group mb-3">
+            <label for="newpassword" class="control-label form-label">{:__('New password')}</label>
+            <input type="password" class="form-control" id="newpassword" name="newpassword" value="" data-rule="required;password" placeholder="">
+            <span class="msg-box"></span>
+        </div>
+        <div class="text-end">
+            <button type="submit" class="btn btn-primary">{:__('Ok')}</button>
+        </div>
+    </form>
+</script>

@@ -1,0 +1,297 @@
+[kline] 2026-10-29 19:10:44 开始同步 33 只日线
+[kline] (1/33) Fatal
+== 行情同步开始：2026-10-29 19:10:44 ==
+  标的不存在：Fatal
+== 完成，消耗接口额度：0 credits ==
+[kline] (2/33) error:
+== 行情同步开始：2026-10-29 19:10:46 ==
+  标的不存在：error:
+== 完成，消耗接口额度：0 credits ==
+[kline] (3/33) Uncaught
+== 行情同步开始：2026-10-29 19:10:48 ==
+  标的不存在：Uncaught
+== 完成，消耗接口额度：0 credits ==
+[kline] (4/33) mysqli_sql_exception:
+== 行情同步开始：2026-10-29 19:10:50 ==
+  标的不存在：mysqli_sql_exception:
+== 完成，消耗接口额度：0 credits ==
+[kline] (5/33) No
+== 行情同步开始：2026-10-29 19:10:52 ==
+  标的不存在：No
+== 完成，消耗接口额度：0 credits ==
+[kline] (6/33) such
+== 行情同步开始：2026-10-29 19:10:54 ==
+  标的不存在：such
+== 完成，消耗接口额度：0 credits ==
+[kline] (7/33) file
+== 行情同步开始：2026-10-29 19:10:56 ==
+  标的不存在：file
+== 完成，消耗接口额度：0 credits ==
+[kline] (8/33) or
+== 行情同步开始：2026-10-29 19:10:58 ==
+  标的不存在：or
+== 完成，消耗接口额度：0 credits ==
+[kline] (9/33) directory
+== 行情同步开始：2026-10-29 19:11:01 ==
+  标的不存在：directory
+== 完成，消耗接口额度：0 credits ==
+[kline] (10/33) in
+== 行情同步开始：2026-10-29 19:11:03 ==
+  标的不存在：in
+== 完成，消耗接口额度：0 credits ==
+[kline] (11/33) Command
+== 行情同步开始：2026-10-29 19:11:05 ==
+  标的不存在：Command
+== 完成，消耗接口额度：0 credits ==
+[kline] (12/33) line
+== 行情同步开始：2026-10-29 19:11:07 ==
+  标的不存在：line
+== 完成，消耗接口额度：0 credits ==
+[kline] (13/33) code:2
+== 行情同步开始：2026-10-29 19:11:09 ==
+  标的不存在：code:2
+== 完成，消耗接口额度：0 credits ==
+[kline] (14/33) Stack
+== 行情同步开始：2026-10-29 19:11:11 ==
+  标的不存在：Stack
+== 完成，消耗接口额度：0 credits ==
+[kline] (15/33) trace:
+== 行情同步开始：2026-10-29 19:11:13 ==
+  标的不存在：trace:
+== 完成，消耗接口额度：0 credits ==
+[kline] (16/33) #0
+== 行情同步开始：2026-10-29 19:11:15 ==
+  标的不存在：#0
+== 完成，消耗接口额度：0 credits ==
+[kline] (17/33) Command
+== 行情同步开始：2026-10-29 19:11:17 ==
+  标的不存在：Command
+== 完成，消耗接口额度：0 credits ==
+[kline] (18/33) line
+== 行情同步开始：2026-10-29 19:11:19 ==
+  标的不存在：line
+== 完成，消耗接口额度：0 credits ==
+[kline] (19/33) code(2):
+== 行情同步开始：2026-10-29 19:11:21 ==
+  标的不存在：code(2):
+== 完成，消耗接口额度：0 credits ==
+[kline] (20/33) mysqli->__construct('',
+== 行情同步开始：2026-10-29 19:11:23 ==
+  标的不存在：mysqli->__construct('',
+== 完成，消耗接口额度：0 credits ==
+[kline] (21/33) '',
+== 行情同步开始：2026-10-29 19:11:25 ==
+  标的不存在：'',
+== 完成，消耗接口额度：0 credits ==
+[kline] (22/33) Object(SensitiveParameterValue),
+== 行情同步开始：2026-10-29 19:11:27 ==
+  标的不存在：Object(SensitiveParameterValue),
+== 完成，消耗接口额度：0 credits ==
+[kline] (23/33) '')
+== 行情同步开始：2026-10-29 19:11:30 ==
+  标的不存在：'')
+== 完成，消耗接口额度：0 credits ==
+[kline] (24/33) #1
+== 行情同步开始：2026-10-29 19:11:32 ==
+  标的不存在：#1
+== 完成，消耗接口额度：0 credits ==
+[kline] (25/33) {main}
+== 行情同步开始：2026-10-29 19:11:34 ==
+  标的不存在：{main}
+== 完成，消耗接口额度：0 credits ==
+[kline] (26/33) thrown
+== 行情同步开始：2026-10-29 19:11:36 ==
+  标的不存在：thrown
+== 完成，消耗接口额度：0 credits ==
+[kline] (27/33) in
+== 行情同步开始：2026-10-29 19:11:38 ==
+  标的不存在：in
+== 完成，消耗接口额度：0 credits ==
+[kline] (28/33) Command
+== 行情同步开始：2026-10-29 19:11:40 ==
+  标的不存在：Command
+== 完成，消耗接口额度：0 credits ==
+[kline] (29/33) line
+== 行情同步开始：2026-10-29 19:11:42 ==
+  标的不存在：line
+== 完成，消耗接口额度：0 credits ==
+[kline] (30/33) code
+== 行情同步开始：2026-10-29 19:11:44 ==
+  标的不存在：code
+== 完成，消耗接口额度：0 credits ==
+[kline] (31/33) on
+== 行情同步开始：2026-10-29 19:11:46 ==
+  标的不存在：on
+== 完成，消耗接口额度：0 credits ==
+[kline] 2026-10-29 19:11:47 开始同步 2 只日线
+[kline] (1/2) 7203
+== 行情同步开始：2026-10-29 19:11:47 ==
+[kline] (32/33) line
+== 行情同步开始：2026-10-29 19:11:48 ==
+  标的不存在：line
+== 完成，消耗接口额度：0 credits ==
+  K线已更新 7203（90根）
+== 完成，消耗接口额度：0 credits ==
+[kline] (33/33) 2
+== 行情同步开始：2026-10-29 19:11:50 ==
+  标的不存在：2
+== 完成，消耗接口额度：0 credits ==
+[kline] (2/2) 6902
+== 行情同步开始：2026-10-29 19:11:51 ==
+  K线已更新 6902（90根）
+== 完成，消耗接口额度：0 credits ==
+[kline] 2026-10-29 19:11:56 完成，共 2 只
+[kline] 2026-10-29 19:39:18 开始同步 25 只日线
+[kline] (1/25) AAPL
+== 行情同步开始：2026-10-29 19:39:18 ==
+  K线已更新 AAPL（90根）
+== 完成，消耗接口额度：0 credits ==
+[kline] (2/25) ADBE
+== 行情同步开始：2026-10-29 19:39:23 ==
+  K线已更新 ADBE（90根）
+== 完成，消耗接口额度：0 credits ==
+[kline] (3/25) AMD
+== 行情同步开始：2026-10-29 19:39:29 ==
+  K线已更新 AMD（90根）
+== 完成，消耗接口额度：0 credits ==
+[kline] (4/25) AMZN
+== 行情同步开始：2026-10-29 19:39:33 ==
+  K线已更新 AMZN（90根）
+== 完成，消耗接口额度：0 credits ==
+[kline] (5/25) COST
+== 行情同步开始：2026-10-29 19:39:38 ==
+  K线已更新 COST（90根）
+== 完成，消耗接口额度：0 credits ==
+[kline] (6/25) CRM
+== 行情同步开始：2026-10-29 19:39:44 ==
+  iTick K线为空：CRM
+== 完成，消耗接口额度：0 credits ==
+[kline] (7/25) GOOGL
+== 行情同步开始：2026-10-29 19:39:48 ==
+  iTick K线为空：GOOGL
+== 完成，消耗接口额度：0 credits ==
+[kline] (8/25) INTC
+== 行情同步开始：2026-10-29 19:39:51 ==
+  iTick K线为空：INTC
+== 完成，消耗接口额度：0 credits ==
+[kline] (9/25) META
+== 行情同步开始：2026-10-29 19:39:54 ==
+  iTick K线为空：META
+== 完成，消耗接口额度：0 credits ==
+[kline] (10/25) MSFT
+== 行情同步开始：2026-10-29 19:39:57 ==
+  iTick K线为空：MSFT
+== 完成，消耗接口额度：0 credits ==
+[kline] (11/25) NFLX
+== 行情同步开始：2026-10-29 19:40:00 ==
+  iTick K线为空：NFLX
+== 完成，消耗接口额度：0 credits ==
+[kline] (12/25) NVDA
+== 行情同步开始：2026-10-29 19:40:05 ==
+  iTick K线为空：NVDA
+== 完成，消耗接口额度：0 credits ==
+[kline] (13/25) ORCL
+== 行情同步开始：2026-10-29 19:40:08 ==
+  iTick K线为空：ORCL
+== 完成，消耗接口额度：0 credits ==
+[kline] (14/25) PYPL
+== 行情同步开始：2026-10-29 19:40:11 ==
+  iTick K线为空：PYPL
+== 完成，消耗接口额度：0 credits ==
+[kline] (15/25) TSLA
+== 行情同步开始：2026-10-29 19:40:14 ==
+  iTick K线为空：TSLA
+== 完成，消耗接口额度：0 credits ==
+[kline] (16/25) BA
+== 行情同步开始：2026-10-29 19:40:18 ==
+  K线已更新 BA（90根）
+== 完成，消耗接口额度：0 credits ==
+[kline] (17/25) DIS
+== 行情同步开始：2026-10-29 19:40:24 ==
+  K线已更新 DIS（90根）
+== 完成，消耗接口额度：0 credits ==
+[kline] (18/25) JNJ
+== 行情同步开始：2026-10-29 19:40:29 ==
+  K线已更新 JNJ（90根）
+== 完成，消耗接口额度：0 credits ==
+[kline] (19/25) JPM
+== 行情同步开始：2026-10-29 19:40:34 ==
+  K线已更新 JPM（90根）
+== 完成，消耗接口额度：0 credits ==
+[kline] (20/25) KO
+== 行情同步开始：2026-10-29 19:40:38 ==
+  K线已更新 KO（90根）
+== 完成，消耗接口额度：0 credits ==
+[kline] (21/25) MCD
+== 行情同步开始：2026-10-29 19:40:44 ==
+  iTick K线为空：MCD
+== 完成，消耗接口额度：0 credits ==
+[kline] (22/25) PFE
+== 行情同步开始：2026-10-29 19:40:47 ==
+  iTick K线为空：PFE
+== 完成，消耗接口额度：0 credits ==
+[kline] (23/25) V
+== 行情同步开始：2026-10-29 19:40:50 ==
+  iTick K线为空：V
+== 完成，消耗接口额度：0 credits ==
+[kline] 2026-10-29 19:40:52 开始同步 25 只日线
+[kline] (1/25) AAPL
+./tools/sync_kline_batch.sh: line 69: /usr/local/bin/php: No such file or directory
+[kline] (24/25) WMT
+== 行情同步开始：2026-10-29 19:40:53 ==
+  iTick K线为空：WMT
+== 完成，消耗接口额度：0 credits ==
+[kline] (2/25) ADBE
+./tools/sync_kline_batch.sh: line 69: /usr/local/bin/php: No such file or directory
+[kline] (25/25) XOM
+== 行情同步开始：2026-10-29 19:40:56 ==
+[kline] (3/25) AMD
+./tools/sync_kline_batch.sh: line 69: /usr/local/bin/php: No such file or directory
+  iTick K线为空：XOM
+== 完成，消耗接口额度：0 credits ==
+[kline] (4/25) AMZN
+./tools/sync_kline_batch.sh: line 69: /usr/local/bin/php: No such file or directory
+[kline] 2026-10-29 19:40:59 完成，共 25 只
+[kline] (5/25) COST
+./tools/sync_kline_batch.sh: line 69: /usr/local/bin/php: No such file or directory
+[kline] (6/25) CRM
+./tools/sync_kline_batch.sh: line 69: /usr/local/bin/php: No such file or directory
+[kline] (7/25) GOOGL
+./tools/sync_kline_batch.sh: line 69: /usr/local/bin/php: No such file or directory
+[kline] (8/25) INTC
+./tools/sync_kline_batch.sh: line 69: /usr/local/bin/php: No such file or directory
+[kline] (9/25) META
+./tools/sync_kline_batch.sh: line 69: /usr/local/bin/php: No such file or directory
+[kline] (10/25) MSFT
+./tools/sync_kline_batch.sh: line 69: /usr/local/bin/php: No such file or directory
+[kline] (11/25) NFLX
+./tools/sync_kline_batch.sh: line 69: /usr/local/bin/php: No such file or directory
+[kline] (12/25) NVDA
+./tools/sync_kline_batch.sh: line 69: /usr/local/bin/php: No such file or directory
+[kline] (13/25) ORCL
+./tools/sync_kline_batch.sh: line 69: /usr/local/bin/php: No such file or directory
+[kline] (14/25) PYPL
+./tools/sync_kline_batch.sh: line 69: /usr/local/bin/php: No such file or directory
+[kline] (15/25) TSLA
+./tools/sync_kline_batch.sh: line 69: /usr/local/bin/php: No such file or directory
+[kline] (16/25) BA
+./tools/sync_kline_batch.sh: line 69: /usr/local/bin/php: No such file or directory
+[kline] (17/25) DIS
+./tools/sync_kline_batch.sh: line 69: /usr/local/bin/php: No such file or directory
+[kline] (18/25) JNJ
+./tools/sync_kline_batch.sh: line 69: /usr/local/bin/php: No such file or directory
+[kline] (19/25) JPM
+./tools/sync_kline_batch.sh: line 69: /usr/local/bin/php: No such file or directory
+[kline] (20/25) KO
+./tools/sync_kline_batch.sh: line 69: /usr/local/bin/php: No such file or directory
+[kline] (21/25) MCD
+./tools/sync_kline_batch.sh: line 69: /usr/local/bin/php: No such file or directory
+[kline] (22/25) PFE
+./tools/sync_kline_batch.sh: line 69: /usr/local/bin/php: No such file or directory
+[kline] (23/25) V
+./tools/sync_kline_batch.sh: line 69: /usr/local/bin/php: No such file or directory
+[kline] (24/25) WMT
+./tools/sync_kline_batch.sh: line 69: /usr/local/bin/php: No such file or directory
+[kline] (25/25) XOM
+./tools/sync_kline_batch.sh: line 69: /usr/local/bin/php: No such file or directory
+[kline] 2026-10-29 19:41:42 完成，共 25 只

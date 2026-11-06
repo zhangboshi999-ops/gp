@@ -1,0 +1,89 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Apply_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <p class="form-control-static">#{$row.apply_id|htmlentities} / {:$row.user?$row.user.nickname:''}</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Period_no')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-period_no" data-rule="required" class="form-control" name="row[period_no]" type="text" value="{$row.period_no|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Amount')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-amount" data-rule="required" class="form-control" step="0.01" min="0.01" name="row[amount]" type="number" value="{$row.amount|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Due_time')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-due_time" data-rule="required" class="form-control datetimepicker" data-date-format="YYYY-MM-DD" data-use-current="false" name="row[due_time]" type="text" value="{:$row.due_time?date('Y-m-d',$row.due_time):''}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Payee_bank_name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-payee_bank_name" class="form-control" name="row[payee_bank_name]" type="text" value="{$row.payee_bank_name|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Payee_branch_name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-payee_branch_name" class="form-control" name="row[payee_branch_name]" type="text" value="{$row.payee_branch_name|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Payee_account_type')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-payee_account_type" class="form-control" name="row[payee_account_type]" type="text" value="{$row.payee_account_type|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Payee_account_no')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-payee_account_no" class="form-control" name="row[payee_account_no]" type="text" value="{$row.payee_account_no|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Payee_account_name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-payee_account_name" class="form-control" name="row[payee_account_name]" type="text" value="{$row.payee_account_name|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-images" class="control-label col-xs-12 col-sm-2">{:__('Images')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-images" class="form-control" size="50" name="row[images]" type="text" value="{$row.images|htmlentities}">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="faupload-images" class="btn btn-danger faupload" data-input-id="c-images" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp,image/webp" data-multiple="true" data-preview-id="p-images"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                    <span><button type="button" id="fachoose-images" class="btn btn-primary fachoose" data-input-id="c-images" data-mimetype="image/*" data-multiple="true"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                </div>
+                <span class="msg-box n-right"></span>
+            </div>
+            <ul class="row list-inline faupload-preview" id="p-images"></ul>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Remark')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-remark" class="form-control" name="row[remark]" rows="3">{$row.remark|htmlentities}</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Checkremark')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-checkremark" class="form-control" name="row[checkremark]" rows="3">{$row.checkremark|htmlentities}</textarea>
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-primary btn-embossed disabled">{:__('OK')}</button>
+        </div>
+    </div>
+</form>
