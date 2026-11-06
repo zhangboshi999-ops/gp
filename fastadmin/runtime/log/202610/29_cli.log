@@ -1,0 +1,19 @@
+[ 2026-10-29T10:24:51+08:00 ][ error ] [8]fwrite(): Write of 1 bytes failed with errno=32 Broken pipe
+error
+[ 2026-10-29T10:24:51+08:00 ][ error ] [0]Unable to write output.
+error
+[ 2026-10-29T10:24:51+08:00 ][ error ] [8]fwrite(): Write of 1 bytes failed with errno=32 Broken pipe
+error
+[ 2026-10-29T10:24:51+08:00 ][ error ] [1]Uncaught RuntimeException: Unable to write output. in /Users/yuguanghe/Herd/学习股票项目/fastadmin/thinkphp/library/think/console/output/driver/Console.php:349
+Stack trace:
+#0 /Users/yuguanghe/Herd/学习股票项目/fastadmin/thinkphp/library/think/console/output/driver/Console.php(72): think\console\output\driver\Console->doWrite('', true, Resource id #129)
+#1 /Users/yuguanghe/Herd/学习股票项目/fastadmin/thinkphp/library/think/console/output/driver/Console.php(113): think\console\output\driver\Console->write(Array, true, 0, Resource id #129)
+#2 /Users/yuguanghe/Herd/学习股票项目/fastadmin/thinkphp/library/think/console/Output.php(159): think\console\output\driver\Console->renderException(Object(RuntimeException))
+#3 /Users/yuguanghe/Herd/学习股票项目/fastadmin/thinkphp/library/think/exception/Handle.php(109): think\console\Output->renderException(Object(RuntimeException))
+#4 /Users/yuguanghe/Herd/学习股票项目/fastadmin/thinkphp/library/think/Error.php(50): think\exception\Handle->renderForConsole(Object(think\console\Output), Object(RuntimeException))
+#5 [internal function]: think\Error::appException(Object(RuntimeException))
+#6 {main}
+  thrown
+error
+[ 2026-10-29T10:24:51+08:00 ][ error ] [8]fwrite(): Write of 1 bytes failed with errno=32 Broken pipe
+error

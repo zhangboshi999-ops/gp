@@ -1,0 +1,78 @@
+---------------------------------------------------------------
+[ 2026-10-29T10:23:22+08:00 ] 127.0.0.1 GET 127.0.0.1:8010/api/market/lists?limit=2
+[ error ] [0]致命错误: Class "app\common\model\Stock" not found
+---------------------------------------------------------------
+[ 2026-10-29T10:25:19+08:00 ] 127.0.0.1 POST 127.0.0.1:8010/ujWLHBNEfM.php/index/login
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'stock.fa_admin_log' doesn't exist
+---------------------------------------------------------------
+[ 2026-10-29T10:25:23+08:00 ] 127.0.0.1 POST 127.0.0.1:8010/ujWLHBNEfM.php/index/login
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'stock.fa_admin_log' doesn't exist
+---------------------------------------------------------------
+[ 2026-10-29T10:25:35+08:00 ] 127.0.0.1 POST 127.0.0.1:8010/ujWLHBNEfM.php/index/login
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'stock.fa_admin_log' doesn't exist
+---------------------------------------------------------------
+[ 2026-10-29T10:26:54+08:00 ] 127.0.0.1 GET 127.0.0.1:8010/ujWLHBNEfM.php/transaction/index
+[ error ] [0]致命错误: Class "app\admin\model\Transaction" not found
+---------------------------------------------------------------
+[ 2026-10-29T10:26:54+08:00 ] 127.0.0.1 GET 127.0.0.1:8010/ujWLHBNEfM.php/user/verify/index
+[ error ] [0]致命错误: Class "app\admin\model\user\Verify" not found
+---------------------------------------------------------------
+[ 2026-10-29T10:27:22+08:00 ] 127.0.0.1 GET 127.0.0.1:8010/ujWLHBNEfM.php/transaction/index
+[ error ] [0]模板文件不存在:/Users/yuguanghe/Herd/学习股票项目/fastadmin/public/../application/admin/view/transaction/index.html
+---------------------------------------------------------------
+[ 2026-10-29T10:27:22+08:00 ] 127.0.0.1 GET 127.0.0.1:8010/ujWLHBNEfM.php/user/verify/index
+[ error ] [0]模板文件不存在:/Users/yuguanghe/Herd/学习股票项目/fastadmin/public/../application/admin/view/user/verify/index.html
+---------------------------------------------------------------
+[ 2026-10-29T12:01:01+08:00 ] 127.0.0.1 GET stock.test/ujWLHBNEfM.php/loan/repayment/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1793246461492
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'stock.fa_loan_repayment' doesn't exist
+---------------------------------------------------------------
+[ 2026-10-29T12:01:02+08:00 ] 127.0.0.1 GET stock.test/ujWLHBNEfM.php/loan/repayment/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1793246462893
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'stock.fa_loan_repayment' doesn't exist
+---------------------------------------------------------------
+[ 2026-10-29T12:01:03+08:00 ] 127.0.0.1 GET stock.test/ujWLHBNEfM.php/loan/repayment/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1793246463473
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'stock.fa_loan_repayment' doesn't exist
+---------------------------------------------------------------
+[ 2026-10-29T12:01:07+08:00 ] 127.0.0.1 GET stock.test/ujWLHBNEfM.php/loan/repayment/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1793246467720
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'stock.fa_loan_repayment' doesn't exist
+---------------------------------------------------------------
+[ 2026-10-29T12:01:10+08:00 ] 127.0.0.1 GET stock.test/ujWLHBNEfM.php/loan/bank/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1793246470689
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'stock.fa_loan_bank' doesn't exist
+---------------------------------------------------------------
+[ 2026-10-29T12:01:11+08:00 ] 127.0.0.1 GET stock.test/ujWLHBNEfM.php/loan/apply/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1793246471405
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'stock.fa_loan_apply' doesn't exist
+---------------------------------------------------------------
+[ 2026-10-29T12:01:31+08:00 ] 127.0.0.1 GET stock.test/ujWLHBNEfM.php/loan/repayment/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1793246467721
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'stock.fa_loan_repayment' doesn't exist
+---------------------------------------------------------------
+[ 2026-10-29T12:01:31+08:00 ] 127.0.0.1 GET stock.test/ujWLHBNEfM.php/loan/bank/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1793246470690
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'stock.fa_loan_bank' doesn't exist
+---------------------------------------------------------------
+[ 2026-10-29T12:01:32+08:00 ] 127.0.0.1 GET stock.test/ujWLHBNEfM.php/loan/bank/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1793246470691
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'stock.fa_loan_bank' doesn't exist
+---------------------------------------------------------------
+[ 2026-10-29T12:01:40+08:00 ] 127.0.0.1 GET stock.test/ujWLHBNEfM.php/loan/bank/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1793246500683
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'stock.fa_loan_bank' doesn't exist
+---------------------------------------------------------------
+[ 2026-10-29T12:01:40+08:00 ] 127.0.0.1 GET stock.test/ujWLHBNEfM.php/loan/bank/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1793246500684
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'stock.fa_loan_bank' doesn't exist
+---------------------------------------------------------------
+[ 2026-10-29T12:01:40+08:00 ] 127.0.0.1 GET stock.test/ujWLHBNEfM.php/loan/bank/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1793246500685
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'stock.fa_loan_bank' doesn't exist
+---------------------------------------------------------------
+[ 2026-10-29T12:03:33+08:00 ] 127.0.0.1 GET stock.test/ujWLHBNEfM.php/loan/repayment/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1793246613530
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'stock.fa_loan_repayment' doesn't exist
+---------------------------------------------------------------
+[ 2026-10-29T12:03:39+08:00 ] 127.0.0.1 GET stock.test/ujWLHBNEfM.php/loan/repayment/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1793246619852
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'stock.fa_loan_repayment' doesn't exist
+---------------------------------------------------------------
+[ 2026-10-29T12:07:38+08:00 ] 127.0.0.1 GET stock.test/api/user/info
+[ error ] [2]mkdir(): File exists
+---------------------------------------------------------------
+[ 2026-10-29T12:19:13+08:00 ] 127.0.0.1 GET stock.test/api/fund/payee
+[ error ] [0]致命错误: Class "app\api\controller\Config" not found
+---------------------------------------------------------------
+[ 2026-10-29T19:42:42+08:00 ] 127.0.0.1 GET stock.test/api/user/info
+[ error ] [2]mkdir(): File exists
+---------------------------------------------------------------
+[ 2026-10-29T19:56:39+08:00 ] 127.0.0.1 GET stock.test/api/index/langs
+[ error ] [2]mkdir(): File exists
